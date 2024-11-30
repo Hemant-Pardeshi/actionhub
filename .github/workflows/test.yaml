@@ -1,0 +1,15 @@
+name: Test Action
+on:
+    workflow_dispatch: 
+        inputs:
+            name:
+                type: string
+                required: false
+                default: 'v1'
+
+jobs:
+    test:
+        runs-on: self-hosted
+        steps:
+            - name: print
+              run: echo Hello ${{ inputs.name }}
